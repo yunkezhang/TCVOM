@@ -1,0 +1,25 @@
+MODEL: 'vmn_gca'
+AGG_WINDOW: 7
+
+SYSTEM:
+  NUM_WORKERS: 8
+  RANDOM_SEED: 777
+  EXP_SUFFIX: "_agg7_v3"
+
+DATASET:
+  PATH: '/data/dataset/VMD108'
+  SUBSET: False
+
+TRAIN:
+  LOAD_CKPT: 'pretrain_vmn_gca_agg7_v3_best.pth'
+  BATCH_SIZE_PER_GPU: 6
+  VAL_BATCH_SIZE_PER_GPU: 6
+  BASE_LR: 1e-4
+  LR_STRATEGY: 'poly'
+  WEIGHT_DECAY: 1e-4
+  TRAIN_INPUT_SIZE: (512, 512)
+  VAL_INPUT_SIZE: (544, 960)
+  OPTIMIZER: 'adam'
+  TOTAL_STEPS: 30           # EPOCHS
+  PRINT_FREQ: 10
+  IMAGE_FREQ: 500

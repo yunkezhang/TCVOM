@@ -1,0 +1,23 @@
+MODEL: 'vmn_fba'
+AGG_WINDOW: 7
+
+SYSTEM:
+  NUM_WORKERS: 8
+  RANDOM_SEED: 777
+  EXP_SUFFIX: "_agg7_v3"
+
+DATASET:
+  PATH: '/data/dataset/DIM/onthefly/'
+
+TRAIN:
+  FREEZE_BACKBONE: True
+  LOAD_CKPT: 'FBA_fe.pth'
+  BATCH_SIZE_PER_GPU: 1
+  BASE_LR: 1e-5
+  LR_STRATEGY: 'const'
+  WEIGHT_DECAY: 1e-4
+  TRAIN_INPUT_SIZE: (512, 512)
+  OPTIMIZER: 'adam'
+  TOTAL_STEPS: 20           # EPOCHS
+  PRINT_FREQ: 10
+  IMAGE_FREQ: 500
