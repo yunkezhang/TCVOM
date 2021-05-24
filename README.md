@@ -4,7 +4,7 @@ This is the Github project for our paper **Attention-guided Temporal Coherent Vi
 
 **The code, the trained model and the dataset are for academic and non-commercial use only.**
 
-The supplementary material of the paper can be found [here](https://1drv.ms/u/s!AuG441T6ysq5hWkSjlb29FSdM0Sc?e=LOCAHA).
+The paper and supplementary material can be found [here](https://1drv.ms/u/s!AuG441T6ysq5hWkSjlb29FSdM0Sc?e=LOCAHA).
 
 
 ## Table of Contents
@@ -26,7 +26,7 @@ The contents of the dataset are the following:
 
 * ``FG``: contains the foreground RGBA image, where the alpha channel is the groundtruth matte and RGB channel is the groundtruth foreground.
 * ``BG``: contains background RGB image used for composition.
-* ``flow_png_val``: contains quantized optical flow of validation video clips for calculating ``MESSDdt`` metric. You can choose not to download this folder if you don't need calculate this metric. You can refer to the `_flow_read()` function in `calc_metric.py` for usage.
+* ``flow_png_val``: contains quantized optical flow of validation video clips for calculating ``MESSDdt`` metric. You can choose not to download this folder if you don't need to calculate this metric. You can refer to the `_flow_read()` function in `calc_metric.py` for usage.
 * `*_videos*.txt`: train / val split.
 * ``frame_corr.json``: FG / BG frame pair used for composition.
 
@@ -57,15 +57,18 @@ Currently our method supports four different image matting methods as base.
     * We used the conventional ``adam`` optimizer instead of ``radam``.
     * We used ``mean`` instead of ``sum`` during loss computation to keep the loss balanced (especially for `L_af`). 
 
-The trained model can be downloaded [here](https://1drv.ms/u/s!AuG441T6ysq5hVLpbkAvbMaDNDmo?e=59i7f7). We provide three different weights for every base method.
+The trained model can be downloaded [here](https://1drv.ms/u/s!AuG441T6ysq5hVLpbkAvbMaDNDmo?e=59i7f7). We provide four different weights for every base method.
 
 * `*_SINGLE_Lim.pth`: The trained weight of the base image matting method on the VideoMatting108 dataset without TAM. Only `L_im` is used during the pretrain. **This is the baseline model.**
 * `*_TAM_Lim_Ltc_Laf.pth`: The trained weight of base image matting method with TAM on VideoMatting108 dataset. `L_im`, `L_tc` and `L_af` is used during the training. **This is our full model.**
 * `*_TAM_pretrain.pth`: The pretrained weight of base image matting method with TAM on the DIM dataset. Only `L_im` is used during the training.
+* ``*_fe.pth``: The converted weight from the original model checkpoint, only used for pretraining TAM.
 
 ### Results
 
 This is the quantitative result on VideoMatting108 validation dataset with `medium` width trimap. The metric is averaged on all 28 validation video clips.
+
+**We use CUDA 10.2 during the inference. Using CUDA 11.1 might result in slightly lower metric. All metrics are calculated with ``calc_metric.py``.**
 
 | Method             | Loss           | SSDA  | dtSSD | MESSDdt | MSE*(10^3) | mSAD  |
 | ------------------ | -------------- | :---: | :---: | :-----: | :--------: | :---: |
