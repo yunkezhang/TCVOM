@@ -20,7 +20,7 @@ The supplementary material can be found [here](https://1drv.ms/u/s!AuG441T6ysq5h
 
 VideoMatting108 is a large video matting dataset that contains 108 video clips with their corresponding groundtruth alpha matte, all in 1080p resolution, 80 clips for training and 28 clips for validation.
 
-You can download the dataset [here](https://1drv.ms/u/s!AuG441T6ysq5g3pP5iTyOMRwUBDy?e=MdorID). The total size of the dataset is 192GB and we've split the archive into 1GB chunks.
+You can download the dataset [here](https://1drv.ms/u/s!AuG441T6ysq5g3pP5iTyOMRwUBDy?e=MdorID) (BaiduYun [mirror](https://pan.baidu.com/s/1NBEt57iFmRpJB3pT3-Erpw), code: v108). The total size of the dataset is 192GB and we've split the archive into 1GB chunks.
 
 The contents of the dataset are the following:
 
