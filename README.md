@@ -1,10 +1,10 @@
-# Attention-guided Temporal Coherent Video Object Matting
+# Attention-guided Temporally Coherent Video Object Matting
 
-This is the Github project for our paper **Attention-guided Temporal Coherent Video Object Matting (arXiv:[2105.11427](https://arxiv.org/abs/2105.11427))**. We provide our code, the supplementary material, trained model and VideoMatting108 dataset here. For the trimap generation module, please see [TCVOM-TGM](https://github.com/yunkezhang/TCVOM-TGM).
+This is the Github project for our paper **Attention-guided Temporally Coherent Video Object Matting (arXiv:[2105.11427](https://arxiv.org/abs/2105.11427))** accepted by ACMMM 2021. We provide our code, the supplementary material, trained model and VideoMatting108 dataset here. For the trimap generation module, please see [TCVOM-TGM](https://github.com/yunkezhang/TCVOM-TGM).
 
 **The code, the trained model and the dataset are for academic and non-commercial use only.**
 
-The supplementary material can be found [here](https://1drv.ms/u/s!AuG441T6ysq5hWkSjlb29FSdM0Sc?e=LOCAHA).
+The paper and the supplementary material can be found [here](https://1drv.ms/u/s!AuG441T6ysq5hWkSjlb29FSdM0Sc?e=LOCAHA).
 
 
 ## Table of Contents
